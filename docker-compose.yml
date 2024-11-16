@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8002"
+    image: donation-app-django
+    container_name: donation_django_container
+    command: bash -c "pip install -r requirements.txt && python manage.py migrate && python manage.py runserver 0.0.0.0:8002"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: donation
+      POSTGRES_PASSWORD: donation
+      POSTGRES_DB: donation-db
+    ports:
+      - "5434:5434"
+    container_name: donation_postgres_container
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
