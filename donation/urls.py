@@ -19,9 +19,9 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("payments/", include("payments.urls", namespace="payments")),
-    path("users/", include("users.urls", namespace="users")),
-    path("cases/", include("cases.urls", namespace="cases")),
+    # path("admin/", admin.site.urls),
+    # path("payments/", include("payments.urls", namespace="payments")),
+    # path("users/", include("users.urls", namespace="users")),
+    path("", include("cases.urls", namespace="cases")),
 
 ]
