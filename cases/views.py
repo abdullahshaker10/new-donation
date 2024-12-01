@@ -2,7 +2,10 @@ from cases.models import Donation
 from cases.serializers import DonationCasesSerializer
 from rest_framework.generics import ListAPIView
 from django.core.cache import cache
+from django.views.generic.base import TemplateView
 
+class HomePage(TemplateView):
+    template_name = "home_page.html"
 
 class CasesAPIView(ListAPIView):
     queryset = Donation.objects.all()

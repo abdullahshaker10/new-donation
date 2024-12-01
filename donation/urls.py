@@ -22,6 +22,6 @@ urlpatterns = [
     # path("admin/", admin.site.urls),
     # path("payments/", include("payments.urls", namespace="payments")),
     # path("users/", include("users.urls", namespace="users")),
-    # path("", include("cases.urls", namespace="cases")),
+    path("", include("cases.urls", namespace="cases")),
 
 ]
