@@ -5,7 +5,7 @@ from django.core.cache import cache
 from django.views.generic.base import TemplateView
 
 class HomePage(TemplateView):
-    template_name = "home_page.html"
+    template_name = "home.html"
 
 class CasesAPIView(ListAPIView):
     queryset = Donation.objects.all()

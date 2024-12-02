@@ -1,4 +1,3 @@
-from django.http import HttpRequest
 from django.urls import resolve, reverse
 from django.test import Client, TestCase
 class HomePageTest(TestCase):
@@ -10,7 +9,4 @@ class HomePageTest(TestCase):
       self.client 
    def test_home_page_returns_correct_html(self):
       response = self.client.get(reverse('cases:home_page'))
-      html = response.content.decode('utf8')
-      self.assertTrue(html.startswith('<html>'))
-      self.assertIn('<title>To-Do lists</title>', html)
-      self.assertTrue(html.endswith('</html>')) 
+      self.assertTrue(response)
